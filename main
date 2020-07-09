@@ -1,0 +1,55 @@
+
+#include "raylib.h"
+
+int main(void)
+{
+    // Initialization
+    //--------------------------------------------------------------------------------------
+    const int screenWidth = 400;
+    const int screenHeight = 400;
+
+    InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
+
+    SetTargetFPS(120);              
+    while (!WindowShouldClose())    
+    {
+       
+        BeginDrawing();
+            
+
+            ClearBackground(BLACK);
+            if(!IsKeyDown(KEY_E)){
+            DrawRectangle(10,10,100,100,WHITE);
+            }else{
+            DrawRectangle(10,10,100,100,BLUE); 
+            }
+            if(!IsKeyDown(KEY_R)){
+            DrawRectangle(120,10,100,100,WHITE);
+            }else{
+            DrawRectangle(120,10,100,100,BLUE);
+            }
+            if(!IsKeyDown(KEY_LEFT)){
+            DrawRectangle(10,120,100,100,WHITE);
+            }else{
+            DrawRectangle(10,120,100,100,BLUE);
+            }
+            if(!IsKeyDown(KEY_RIGHT)){
+            DrawRectangle(340,10,100,100,WHITE);
+            }else{
+            DrawRectangle(340,10,100,100,BLUE);
+            }
+            DrawText("E",30,15,100,BLACK);
+            DrawText("R",130,15,100,BLACK);     
+            
+                
+        EndDrawing();
+        //----------------------------------------------------------------------------------
+    }
+
+    // De-Initialization
+    //--------------------------------------------------------------------------------------
+    CloseWindow();        // Close window and OpenGL context
+    //--------------------------------------------------------------------------------------
+
+    return 0;
+}
